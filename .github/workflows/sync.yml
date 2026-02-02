@@ -1,0 +1,32 @@
+name: Sync Claude Config
+
+on:
+  schedule:
+    # 每周自动检查更新
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    # 手动触发
+
+jobs:
+  sync-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Check for template updates
+        run: |
+          echo "Checking for template updates..."
+          # 可以添加自定义检查逻辑
+
+      - name: Notify (示例)
+        run: |
+          echo "Template sync check completed"
+          echo "Run ./install.sh --force to update"

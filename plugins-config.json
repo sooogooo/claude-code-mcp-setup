@@ -1,0 +1,149 @@
+{
+  "version": 2,
+  "description": "Recommended plugins configuration for Claude Code projects",
+  "installScope": {
+    "user": [
+      "MCP Plugins that should be installed globally (user scope)"
+    ],
+    "project": [
+      "MCP Plugins that should be installed per-project (project scope)"
+    ]
+  },
+  "recommended": {
+    "plugins": {
+      // ========== 核心开发工具 (建议全局) ==========
+      "context7@claude-plugins-official": {
+        "enabled": true,
+        "scope": "user",
+        "description": "Documentation lookup and querying",
+        "reason": "Used in almost every project for reading docs"
+      },
+      "github@claude-plugins-official": {
+        "enabled": true,
+        "scope": "user",
+        "description": "GitHub integration, PR review, repo management",
+        "reason": "Standard for all code projects"
+      },
+      "supabase@claude-plugins-official": {
+        "enabled": true,
+        "scope": "user",
+        "description": "Supabase database operations",
+        "reason": "If using Supabase as backend"
+      },
+
+      // ========== 开发工作流工具 (按项目选择) ==========
+      "agent-sdk-dev@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Agent SDK development tools",
+        "reason": "Only when developing Claude Agent SDK apps"
+      },
+      "code-review@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Automated code review",
+        "reason": "Quality assurance for all projects"
+      },
+      "commit-commands@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Git commit and PR commands",
+        "reason": "Version control workflow"
+      },
+      "feature-dev@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Feature development workflow",
+        "reason": "Structured development process"
+      },
+      "frontend-design@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Frontend design patterns and best practices",
+        "reason": "For frontend projects"
+      },
+      "learning-output-style@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Learning-focused output style",
+        "reason": "Educational and documentation projects"
+      },
+      "playwright@claude-plugins-official": {
+        "enabled": false,
+        "scope": "project",
+        "description": "End-to-end testing with Playwright",
+        "reason": "Only when writing E2E tests"
+      },
+      "plugin-dev@claude-plugins-official": {
+        "enabled": false,
+        "scope": "project",
+        "description": "Plugin development tools",
+        "reason": "Only when developing plugins"
+      },
+      "pr-review-toolkit@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Pull request review toolkit",
+        "reason": "Code review workflow"
+      },
+      "security-guidance@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Security best practices and vulnerability checking",
+        "reason": "Security is important for all projects"
+      },
+      "explanatory-output-style@claude-plugins-official": {
+        "enabled": true,
+        "scope": "project",
+        "description": "Explanatory output style with detailed reasoning",
+        "reason": "When detailed explanations are needed"
+      },
+      "vercel@claude-plugins-official": {
+        "enabled": false,
+        "scope": "project",
+        "description": "Vercel deployment integration",
+        "reason": "Only for Vercel-deployed projects"
+      },
+      "asana@claude-plugins-official": {
+        "enabled": false,
+        "scope": "user",
+        "description": "Asana task management",
+        "reason": "Only if using Asana for project management"
+      }
+    }
+  },
+  "settings": {
+    "env": {
+      "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+    },
+    "model": "opus"
+  },
+  "categories": {
+    "core": [
+      "context7@claude-plugins-official",
+      "github@claude-plugins-official"
+    ],
+    "development": [
+      "code-review@claude-plugins-official",
+      "commit-commands@claude-plugins-official",
+      "feature-dev@claude-plugins-official",
+      "pr-review-toolkit@claude-plugins-official",
+      "security-guidance@claude-plugins-official"
+    ],
+    "frontend": [
+      "frontend-design@claude-plugins-official",
+      "playwright@claude-plugins-official"
+    ],
+    "outputStyles": [
+      "learning-output-style@claude-plugins-official",
+      "explanatory-output-style@claude-plugins-official"
+    ],
+    "backend": [
+      "supabase@claude-plugins-official"
+    ],
+    "specialized": [
+      "agent-sdk-dev@claude-plugins-official",
+      "plugin-dev@claude-plugins-official"
+    ]
+  }
+}
